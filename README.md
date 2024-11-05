@@ -37,13 +37,19 @@ pip install bcrypt matplotlib
 
 ## Analysis
 
-### 1. Average Hash Time vs. Cost Factor
+### 1. Cost Factor vs Average Hash and Validation Time for different Passoword Lengths
+
+![Average Hash Time vs. Cost Factor for Varying Password Lengths](./Cost%20Factor%20vs%20Hash%20Times%20for%20different%20lengths%20of%20password.png)
+
+For each password length, ranging from 8 to 13 characters, the hashing and verification times were measured while incrementally increasing the bcrypt cost factor. As shown in Figure 1, both the hashing and verification times increased consistently with the cost factor, reflecting bcrypt's computational design. Notably, the results indicate that password length had a minimal impact on hashing and verification times. This suggests that bcrypt’s performance is largely determined by the cost factor rather than the password length, as bcrypt's work factor (cost) dominates its processing time.
+
+### 2. Average Hash Time vs. Cost Factor
 
 ![Average Hash Time vs. Cost Factor](./Avg%20hash%20verify%20vs%20cost%20factor.png)
 
 This graph illustrates the trends in average hash times for various cost factors, ranging from 8 to 14. It highlights how the hash time increases as the cost factor rises, indicating a direct relationship between the cost factor and processing time.
 
-### 2. Cost Factor vs. Time to Brute Force the Password
+### 3. Cost Factor vs. Time to Brute Force the Password
 
 ![Cost Factor vs. Time to Brute Force](./Cost%20Factor%20vs%20Time%20to%20Brute%20Force.png)
 
